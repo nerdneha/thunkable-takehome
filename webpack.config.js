@@ -1,6 +1,9 @@
+const path = require('path')
+
 module.exports = {
   entry: './index.js',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -13,6 +16,12 @@ module.exports = {
           options: {
             cacheDirectory: true
           }
+        }
+      },
+      {
+        test: /\.png$/,
+        use: {
+          loader: 'file-loader'
         }
       }
     ]
