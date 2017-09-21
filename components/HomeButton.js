@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const HomeWrapper = styled.div`
+const HomeButtonStyle = styled.div`
   width: 70px;
   height: 70px;
   background-color: white;
@@ -9,8 +9,8 @@ const HomeWrapper = styled.div`
 
 export default function () {
   return (
-    <HomeWrapper>
+    <HomeButtonStyle>
       <img src='/assets/beaver 1.png' />
-    </HomeWrapper>
+    </HomeButtonStyle>
   )
 }

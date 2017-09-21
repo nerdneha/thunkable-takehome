@@ -15,6 +15,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "file-loader": "^0.11.2",
     "standard": "^10.0.3",
     "surge": "^0.19.0",
@@ -24,6 +25,8 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "styled-components": "^2.1.2"
   }
 }

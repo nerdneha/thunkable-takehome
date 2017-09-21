@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Square } from './Square'
-import { Title } from './Title'
+import { Square } from './styles/Square'
+import { Title } from './styles/Title'
 
 const AddIcon = styled.img`
   height: 66px;

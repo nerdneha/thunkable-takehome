@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Title } from './Title'
+import { Title } from './styles/Title'
 
 const Select = styled.div`
   width: 132px;

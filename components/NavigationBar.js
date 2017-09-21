@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Settings from './Settings'
-import Home from './Home'
+import HomeButton from './HomeButton'
 
-const NavStyles = styled.div`
+const NavigationStyle = styled.div`
 height: 70px;
 background-image: linear-gradient(to left, #ffffff, #f2f3f5);
 display: flex;
@@ -14,9 +14,9 @@ align-items: center;
 
 export default function () {
   return (
-    <NavStyles>
-      <Home />
+    <NavigationStyle>
+      <HomeButton />
       <Settings />
-    </NavStyles>
+    </NavigationStyle>
   )
 }

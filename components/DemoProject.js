@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Square } from './Square'
-import { Title } from './Title'
+import { connect } from 'react-redux'
+import { Square } from './styles/Square'
+import { Title } from './styles/Title'
+import DeleteProject from './DeleteProject'
+import deleteProject from '../actions/deleteProject'
 
 const SupportingText = styled.div`
   font-family: OpenSans;
@@ -12,19 +15,10 @@ const SupportingText = styled.div`
   margin-bottom: 10px;
 `
 
-const AppAction = styled.img`
+const DownloadProject = styled.img`
   width: 30px;
   height: 30px;
 `
-
-function AppActions () {
-  return (
-    <div>
-      <AppAction src='/assets/delete.png' />
-      <AppAction src='/assets/download.png' />
-    </div>
-  )
-}
 
 const DemoIcon = styled.img`
   height: 85.1px;
@@ -33,13 +27,22 @@ const DemoIcon = styled.img`
   margin-bottom: 32px;
 `
 
-export default function ({text, editTime}) {
+export function DemoProject ({name, editTime, index, deleteProject}) {
+  const handleDelete = () => deleteProject(index)
+
   return (
     <Square className='demo-project'>
       <DemoIcon src='/assets/defaut icon.png' />
-      <Title>{text}</Title>
+      <Title>{name}</Title>
       <SupportingText>Last edit: {editTime}</SupportingText>
-      <AppActions />
+      <div>
+        <DeleteProject onDelete={handleDelete} />
+        <DownloadProject src='/assets/download.png' />
+      </div>
     </Square>
   )
 }
+
+export default connect(null, {
+  deleteProject
+})(DemoProject)

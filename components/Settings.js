@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SettingsIcon = styled.img`
+const Settings = styled.img`
   width: 34.8px;
   height: 34.8px;
   margin-right: 31px;
 `
 
-export default function Settings () {
+export default function () {
   return (
-    <SettingsIcon src='/assets/setting icon.png' />
+    <Settings src='/assets/setting icon.png' />
   )
 }

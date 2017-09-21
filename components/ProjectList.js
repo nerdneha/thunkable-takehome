@@ -1,9 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import NewProject from './NewProject'
 import DemoProject from './DemoProject'
+import deleteProject from '../actions/deleteProject'
 
-const ProjectListStyles = styled.div`
+const ProjectListStyle = styled.div`
   margin-left: 115px;
   margin-right: 192px;
   display: flex;
@@ -13,13 +15,25 @@ const ProjectListStyles = styled.div`
   }
 `
 
-export default function () {
+export function ProjectList ({ projects }) {
   return (
-    <ProjectListStyles>
+    <ProjectListStyle>
       <NewProject />
-      <DemoProject text='Demo App 2' editTime='10-09-15' />
-      <DemoProject text='Demo App 3' editTime='10-09-15' />
-      <DemoProject text='Demo App 4' editTime='10-09-15' />
-    </ProjectListStyles>
+      {
+        projects.map(({name, editTime}, index) => {
+          return <DemoProject {...{ name, editTime, index, key: name }} />
+        })
+      }
+    </ProjectListStyle>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    projects: state.projects
+  }
+}
+
+export default connect(mapStateToProps, {
+  deleteProject
+})(ProjectList)
