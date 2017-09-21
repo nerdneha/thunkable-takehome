@@ -10,7 +10,7 @@ const Line = styled.div`
 `
 
 const PageStyle = styled.div`
-  width: 1477px;
+  max-width: 1477px;
   height: 983px;
   background-image: linear-gradient(to left, #fcf5f5, #f0f2ff);
   `
